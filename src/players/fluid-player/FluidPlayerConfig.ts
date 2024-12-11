@@ -42,18 +42,20 @@ export const fluidPlayerConfig = (
                 },
                 vastVideoSkippedCallback: () => {
                     logger.info('vastVideoSkippedCallback - Ad is skipped');
+                    if (!genericConfiguration.hideOnEnded) return;
                     const element = document.getElementById(elementId);
                     if (element !== null) {
                         logger.log('vastVideoSkippedCallback - remove element from DOM.');
-                        element.style.display = 'none';
+                        element.style.setProperty('display', 'none', 'important');
                     }
                 },
                 vastVideoEndedCallback: () => {
                     logger.info('vastVideoEndedCallback - Ad ended');
+                    if (!genericConfiguration.hideOnEnded) return;
                     const element = document.getElementById(elementId);
                     if (element !== null) {
                         logger.log('vastVideoEndedCallback - remove element from DOM.');
-                        element.style.display = 'none';
+                        element.style.setProperty('display', 'none', 'important');
                     }
                 }
             }
@@ -68,7 +70,7 @@ export const fluidPlayerConfig = (
         },
         layoutControls: {
             playButtonShowing: true,
-            autoPlay: false,
+            autoPlay: genericConfiguration.autoPlay,
             preload: genericConfiguration.preload,
             mute: genericConfiguration.mute,
             doubleclickFullscreen: true,

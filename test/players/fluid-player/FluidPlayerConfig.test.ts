@@ -29,7 +29,8 @@ describe('Test cases for players/fluid-player/FluidPlayerConfig.js file', () => 
         autoPlay: false,
         preload: false,
         mute: true,
-        adText: 'Hi Valid Object'
+        adText: 'Hi Valid Object',
+        hideOnEnded:true,
     };
     const obj = fluidPlayerConfig(bid, elementId, genericConfiguration);
 

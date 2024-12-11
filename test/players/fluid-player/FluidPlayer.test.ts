@@ -30,7 +30,8 @@ describe('Test cases for players/fluid-player/FluidPlayer.js file', () => {
         autoPlay: false,
         preload: false,
         mute: true,
-        adText: 'Hi Valid Object'
+        adText: 'Hi Valid Object',
+        hideOnEnded:true
     };
     let fluidPlayerObj = new FluidPlayer();
 

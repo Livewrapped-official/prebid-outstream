@@ -25,7 +25,7 @@ export default class OutstreamPlayer {
     public videoPlayerId?: string;
 
     constructor(bid: unknown, elementId: unknown, config?: unknown) {
-        logger.debug(
+        logger.debugLazy(() =>
             'Inside OutstreamPlayer constructor with parameters: ' +
                 JSON.stringify(bid) +
                 elementId +

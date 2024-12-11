@@ -44,7 +44,8 @@ describe('Test cases for OutstreamPlayer.js file', () => {
         autoPlay: true,
         preload: false,
         mute: true,
-        adText: 'Hi Valid Object'
+        adText: 'Hi Valid Object',
+        hideOnEnded:true
     };
     let outstreamPlayer: OutstreamPlayer;
 

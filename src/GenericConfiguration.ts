@@ -8,6 +8,7 @@ export type GenericConfiguration = {
     preload: boolean;
     mute: boolean;
     adText: string;
+    hideOnEnded: boolean;
 };
 
 const defaultConfiguration: GenericConfiguration = {
@@ -19,7 +20,8 @@ const defaultConfiguration: GenericConfiguration = {
     autoPlay: true,
     preload: true,
     mute: true,
-    adText: ''
+    adText: '',
+    hideOnEnded: true,
 };
 
 export const genericConfigurationWithDefaults = (
@@ -51,6 +53,7 @@ export const genericConfigurationWithDefaults = (
         preload:
             typeof config.preload === 'boolean' ? config.preload : defaultConfiguration.preload,
         mute: typeof config.mute === 'boolean' ? config.mute : defaultConfiguration.mute,
-        adText: typeof config.adText === 'string' ? config.adText : defaultConfiguration.adText
+        adText: typeof config.adText === 'string' ? config.adText : defaultConfiguration.adText,
+        hideOnEnded: typeof config.hideOnEnded === 'boolean' ? config.hideOnEnded : defaultConfiguration.hideOnEnded,
     };
 };

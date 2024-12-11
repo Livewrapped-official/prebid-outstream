@@ -38,6 +38,12 @@ class Logger {
         }
     };
 
+    debugLazy = (msgFn: (() => string)) => {
+        if (this.logLevel >= LogLevel.debug) {
+            console.debug(this.prefixMessage('DEBUG', msgFn()));
+        }
+    };
+
     warn = (msg: string, args?: any) => {
         if (this.logLevel >= LogLevel.warn) {
             console.warn(this.prefixMessage('WARN', msg), args);

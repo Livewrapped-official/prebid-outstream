@@ -6,6 +6,7 @@ describe('Test cases for GenericConfiguration.ts file', () => {
         expect(obj).toEqual({
             width: 640,
             height: 480,
+            hideOnEnded: true,
             vastTimeout: 5000,
             maxAllowedVastTagRedirects: 3,
             allowVpaid: false,
@@ -29,6 +30,7 @@ describe('Test cases for GenericConfiguration.ts file', () => {
         expect(obj).toEqual({
             width: 640,
             height: 480,
+            hideOnEnded: true,
             vastTimeout: 5000,
             maxAllowedVastTagRedirects: 2,
             allowVpaid: false,
@@ -54,6 +56,7 @@ describe('Test cases for GenericConfiguration.ts file', () => {
         expect(obj).toEqual({
             width: 40,
             height: 80,
+            hideOnEnded: true,
             vastTimeout: 4000,
             maxAllowedVastTagRedirects: 4,
             allowVpaid: true,

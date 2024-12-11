@@ -27,6 +27,19 @@ describe('Test cases for Logger.js file', () => {
         });
     });
 
+    describe('debugLazy method', () => {
+        test('it should call console.debug', () => {
+            const consoleDebugMock = (console.debug = jest.fn());
+
+            let result = logger.debugLazy(() => 'Test message.');
+            expect(result).toBeUndefined();
+            expect(console.debug).toHaveBeenCalledTimes(1);
+            expect(console.debug).toHaveBeenNthCalledWith(1, 'PLAYER-DEBUG: Test message.');
+
+            consoleDebugMock.mockReset();
+        });
+    });
+
     describe('warn method', () => {
         test('it should call console.warn', () => {
             const consoleWarnMock = (console.warn = jest.fn());
